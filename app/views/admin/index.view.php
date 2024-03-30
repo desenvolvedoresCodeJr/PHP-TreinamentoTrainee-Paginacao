@@ -51,10 +51,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($users as $user) : ?>
                     <tr>  
-                        <th scope="row" class="number">1</th>
-                        <td>Treinamento CRUD</td>
-                        <td class="email">treinamento@gmail.com</td>
+                        <th scope="row" class="number"><?= $user->id ?></th>
+                        <td><?= $user->name ?></td>
+                        <td class="email"><?= $user->email ?></td>
                         <td>
                             <div class="btn-acoes">
                                 <button type="button">
@@ -69,7 +70,7 @@
                             </div>
                         </td>
                     </tr>                  
-    
+                    <?php endforeach; ?>
                 <!-- Modal Editar Usuário-->
                 <?php require(__DIR__ . '/../admin/modals/modal_edit.view.php') ?>
                 <!--  -->

@@ -7,10 +7,11 @@ use Exception;
 
 class ExampleController
 {
-
     public function index()
     {
-        return view('admin/index');
+        $users = App::get('database')->selectAll('users');
+        
+        return view('admin/index', compact('users'));
     }
 }
 
